@@ -49,4 +49,9 @@ public class PratoController {
 		repository.deleteById(id);
 	}
 	
+	@GetMapping("/retornaTodosDoRestaurante/{id}")
+	List<Prato> todosPratosDoRestaurante(@PathVariable Long id){
+		return repository.findAllByRestaurante(id);
+	}
+	
 }
