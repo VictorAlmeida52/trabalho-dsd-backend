@@ -28,9 +28,6 @@ public class Restaurante {
 	private String local;
 	
 	private String tipo;
-	
-	@OneToMany(mappedBy = "restaurante", targetEntity = Prato.class, cascade = CascadeType.ALL)
-	private List<Prato> pratos;
 
 	public Long getId() {
 		return id;
@@ -62,14 +59,6 @@ public class Restaurante {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
-	}
-
-	public List<Prato> getPratos() {
-		return pratos;
-	}
-
-	public void setPratos(List<Prato> pratos) {
-		this.pratos = pratos;
 	}
 
 }

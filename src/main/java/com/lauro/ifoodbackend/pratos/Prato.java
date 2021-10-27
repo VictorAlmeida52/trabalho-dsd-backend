@@ -32,7 +32,6 @@ public class Prato {
 	private Integer serveQuantas;
 	
 	@ManyToOne
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private Restaurante restaurante;
 	
 	public Long getId() {
