@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ifood?&serverTimezone=UTC
-    username: usuario
-    password: senha
+    url: jdbc:mysql://localhost:3306/iservicesdb?&serverTimezone=UTC
+    username: root
+    password: senha-segura
     
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect

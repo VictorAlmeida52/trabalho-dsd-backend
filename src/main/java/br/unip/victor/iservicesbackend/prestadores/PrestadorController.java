@@ -1,4 +1,4 @@
-package com.lauro.ifoodbackend.pratos;
+package br.unip.victor.iservicesbackend.prestadores;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,42 +16,40 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/pratos")
+@RequestMapping("/prestadores")
 @AllArgsConstructor
-public class PratoController {
+public class PrestadorController {
 
 	@Autowired
-	PratoRepository repository;
+	PrestadorRepository repository;
 	
 	@GetMapping("/retornaTodos")
-	List<Prato> todosPratos(){
+	List<Prestador> todosRestaurantes(){
 		return repository.findAll();
 	}
 	
 	@PostMapping("/novo")
-	Prato novoPrato(@RequestBody Prato prato) {
-		return repository.save(prato);
+	Prestador novoRestaurante(@RequestBody Prestador prestador) {
+		return repository.save(prestador);
 	}
 	
 	@GetMapping("/{id}")
-	Optional<Prato> retornaPrato(@PathVariable Long id){
+	Optional<Prestador> retornaRestaurante(@PathVariable Long id) {
 		return repository.findById(id);
 	}
 	
 	@PutMapping("/{id}")
-	Prato atualizaPrato(@RequestBody Prato prato, @PathVariable Long id) {
-		prato.setId(id);
-		return repository.save(prato);
+	Prestador atualizaRestaurante(@RequestBody Prestador restaurante, @PathVariable Long id) {
+		
+		restaurante.setId(id);
+		return repository.save(restaurante);
+		
 	}
 	
 	@DeleteMapping("/deleta/{id}")
-	void deletaPrato(@PathVariable Long id) {
+	void deletaRestaurante(@PathVariable Long id) {
 		repository.deleteById(id);
 	}
-	
-	@GetMapping("/retornaTodosDoRestaurante/{id}")
-	List<Prato> todosPratosDoRestaurante(@PathVariable Long id){
-		return repository.findAllByRestaurante(id);
-	}
+
 	
 }

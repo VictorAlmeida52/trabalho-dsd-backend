@@ -1,22 +1,23 @@
-package com.lauro.ifoodbackend.pratos;
+package br.unip.victor.iservicesbackend.servicos;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.lauro.ifoodbackend.restaurantes.Restaurante;
 import com.sun.istack.NotNull;
 
+import br.unip.victor.iservicesbackend.prestadores.Prestador;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Prato {
+public class Servico {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,50 +28,49 @@ public class Prato {
 	
 	@NotNull
 	private String nome;
-	private String tipo;
-	private String listaDeIngredientes;
-	private Integer serveQuantas;
+	private String descricao;
 	
 	@ManyToOne
-	private Restaurante restaurante;
-	
+	private Prestador prestador;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public Double getPreco() {
 		return preco;
 	}
+
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getTipo() {
-		return tipo;
+
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	public String getListaDeIngredientes() {
-		return listaDeIngredientes;
+
+	public Prestador getPrestador() {
+		return prestador;
 	}
-	public void setListaDeIngredientes(String listaDeIngredientes) {
-		this.listaDeIngredientes = listaDeIngredientes;
+
+	public void setPrestador(Prestador prestador) {
+		this.prestador = prestador;
 	}
-	public Integer getServeQuantas() {
-		return serveQuantas;
-	}
-	public void setServeQuantas(Integer serveQuantas) {
-		this.serveQuantas = serveQuantas;
-	}
-	
-	
 	
 }

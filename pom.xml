@@ -8,8 +8,8 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.lauro</groupId>
-	<artifactId>ifood-backend</artifactId>
+	<groupId>br.unip.victor</groupId>
+	<artifactId>iservices-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ifood-backend</name>
 	<description>Projeto para aula de Spring Boot</description>
